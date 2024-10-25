@@ -4,7 +4,7 @@ body{
 }
 header{
     background: blue;
-    border-bottom: 5px white;
+    border-bottom: solid 5 px white;
 }
 iframe{
     background: orangered;
