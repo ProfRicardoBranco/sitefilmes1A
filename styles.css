@@ -5,6 +5,7 @@ body{
 header{
     background: blue;
     border-bottom: solid 5px white;
+    font-size: 30px;
 }
 iframe{
     background: orangered;
