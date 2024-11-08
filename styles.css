@@ -1,27 +1,32 @@
-body{
+body {
     background: black;
     color: white;
+    font-family: "Delius", cursive;
+
+
 }
-header{
+
+header {
     background: blue;
     border-bottom: solid 5px white;
     font-size: 30px;
 }
-iframe{
+
+iframe {
     background: orangered;
     padding: 20px;
 }
 
-.logo{
+.logo {
     width: 10%;
 }
 
-section{
-display:flex;
-justify-content: space-around;
+section {
+    display: flex;
+    justify-content: space-around;
 }
 
-h1{
-    display: block
+h1 {
+    display: block;
     text-align: center;
 }
