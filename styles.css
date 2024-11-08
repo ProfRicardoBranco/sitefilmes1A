@@ -15,3 +15,8 @@ iframe{
 .logo{
     width: 10%;
 }
+
+section{
+display:flex;
+justify-content: center;
+}
