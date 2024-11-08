@@ -23,7 +23,7 @@ iframe {
 
 section {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 h1 {
