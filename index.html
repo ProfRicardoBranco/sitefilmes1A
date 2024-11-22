@@ -27,15 +27,15 @@
             position: relative;
             margin: auto; /* Centraliza o conteúdo do modal */
             padding-top: 56.25%; /* Mantém a proporção de 16:9 */
-            width: 60%; /* Largura do conteúdo do modal */
+            width: 80%; /* Largura do conteúdo do modal */
         }
 
         .modal-content iframe {
             position: absolute;
             top: 0;
             left: 0;
-            width: 80%;
-            height: 80%;
+            width: 100%;
+            height: 100%;
         }
 
         .close {
@@ -50,6 +50,17 @@
             color: red; /* Muda a cor ao passar o mouse */
             text-decoration: none;
             cursor: pointer;
+        }
+
+        /* Estilo para a logo do YouTube */
+        .youtube-logo {
+            position: absolute;
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta para centralizar corretamente */
+            width: 60px; /* Largura da logo */
+            height: auto; /* Mantém a proporção da altura */
+            z-index: 10; /* Coloca a logo acima da imagem */
         }
     </style>
 </head>
@@ -71,9 +82,12 @@
     </section>
 
     <h2>Mais vídeos:</h2>
-    <section>
+    <section style="position: relative;">
         <a href="#" id="videoLink">
-            <img src="https://img.youtube.com/vi/owO44MQkgX0/maxresdefault.jpg">
+            <img src="https://img.youtube.com/vi/owO44MQkgX0/maxresdefault.jpg" style="display:block;">
+            <!-- Logo do YouTube -->
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/YouTube_icon_%282013-2017%29.png" 
+                 alt="YouTube Logo" class="youtube-logo">
         </a>
     </section>
 
@@ -96,7 +110,7 @@
         videoLink.onclick = function (event) {
             event.preventDefault(); // Impede a ação padrão do link
             modal.style.display = "block"; // Mostra o modal
-            modalVideo.src = "https://www.youtube.com/embed/owO44MQkgX0?autoplay=1"; // Define a URL do vídeo com autoplay e mute
+            modalVideo.src = "https://www.youtube.com/embed/owO44MQkgX0?autoplay=1"; // Define a URL do vídeo com autoplay
         }
 
         // Quando o usuário clica no botão de fechar, fecha o modal
