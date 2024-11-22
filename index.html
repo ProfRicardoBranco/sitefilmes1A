@@ -9,34 +9,103 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
+    <style>
+        /* Estilo para o modal */
+        .modal {
+            display: none; /* Oculta o modal por padrão */
+            position: fixed; /* Fixa o modal na tela */
+            z-index: 1000; /* Coloca o modal acima de outros elementos */
+            left: 0;
+            top: 0;
+            width: 100%; /* Largura total */
+            height: 100%; /* Altura total */
+            overflow: auto; /* Permite rolagem se necessário */
+            background-color: rgba(0, 0, 0, 0.8); /* Fundo escuro com transparência */
+        }
 
+        .modal-content {
+            margin: 15% auto; /* Centraliza o conteúdo do modal */
+            padding: 20px;
+            width: 80%; /* Largura do conteúdo do modal */
+        }
+
+        .close {
+            color: white;
+            float: right; /* Posiciona o botão de fechar à direita */
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: red; /* Muda a cor ao passar o mouse */
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
     <header>
         1AFlix
-
     </header>
-    <h1> Página de vídeos sobre kenny West</h1>
+    <h1>Página de vídeos sobre Kanye West</h1>
 
     <section>
-
-
         <div>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/MKM90u7pf3U?si=ZRuHqaVqS4JM8iY2"
                 title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;
-    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+                encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
                 allowfullscreen></iframe>
             <p>Kanye West - Closed On Sunday (Official Video)</p>
         </div>
     </section>
 
     <h2>Mais vídeos:</h2>
-<section>
-    <a href="https://www.youtube.com/watch?v=owO44MQkgX0" target="_blank">
-        <img src="https://img.youtube.com/vi/owO44MQkgX0/maxresdefault.jpg" >
-    </a>
-</section>
+    <section>
+        <a href="#" id="videoLink">
+            <img src="https://img.youtube.com/vi/owO44MQkgX0/maxresdefault.jpg">
+        </a>
+    </section>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <iframe id="modalVideo" width="560" height="315"
+                src=""
+                frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        // Obtém os elementos do DOM
+        var modal = document.getElementById("myModal");
+        var videoLink = document.getElementById("videoLink");
+        var modalVideo = document.getElementById("modalVideo");
+        var span = document.getElementsByClassName("close")[0];
+
+        // Quando o usuário clica na imagem, abre o modal
+        videoLink.onclick = function (event) {
+            event.preventDefault(); // Impede a ação padrão do link
+            modal.style.display = "block"; // Mostra o modal
+            modalVideo.src = "https://www.youtube.com/embed/owO44MQkgX0"; // Define a URL do vídeo
+        }
+
+        // Quando o usuário clica no botão de fechar, fecha o modal
+        span.onclick = function () {
+            modal.style.display = "none"; // Esconde o modal
+            modalVideo.src = ""; // Para o vídeo
+        }
+
+        // Quando o usuário clica fora do modal, fecha-o
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none"; // Esconde o modal
+                modalVideo.src = ""; // Para o vídeo
+            }
+        }
+    </script>
 
 </body>
 
